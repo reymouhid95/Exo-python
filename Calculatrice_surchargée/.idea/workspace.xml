@@ -5,16 +5,19 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d84e79d6-4b38-419f-a27f-99a98b6c8c1f" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/Calculatrice_surchargée.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/dbnavigator.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/git_toolbox_blame.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/profiles_settings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/material_theme_project_new.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Account/.idea/material_theme_project_new.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Account/.idea/material_theme_project_new.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Account/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Account/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Account/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Account/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Account/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/../Account/main.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Recursivité/.idea/dbnavigator.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Recursivité/.idea/dbnavigator.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Recursivité/.idea/material_theme_project_new.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Recursivité/.idea/material_theme_project_new.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Recursivité/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Recursivité/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Recursivité/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Recursivité/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Recursivité/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Recursivité/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Stock/.idea/material_theme_project_new.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Stock/.idea/material_theme_project_new.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Stock/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Stock/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Stock/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Stock/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Stock/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/../Stock/main.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -29,11 +32,11 @@
     </option>
   </component>
   <component name="Git.Settings">
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "associatedIndex": 8
-}]]></component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 8
+}</component>
   <component name="ProjectId" id="2jOfn3hkwdGCM5KmqFiIE86FT7W" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <ConfirmationsSetting value="2" id="Add" />
@@ -46,7 +49,7 @@
   "keyToString": {
     "Python.main.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "master",
+    "git-widget-placeholder": "main",
     "ignore_missing_gitignore": "true"
   }
 }]]></component>

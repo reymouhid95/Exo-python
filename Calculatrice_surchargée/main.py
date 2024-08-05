@@ -1,14 +1,18 @@
 from numbers import Number
 
-
 class Calculatrice:
     @staticmethod
     def addition(*args):
         return sum(args)
 
     @staticmethod
-    def soustraction(a, b):
-        return a - b
+    def soustraction(*args):
+        if len(args) < 2:
+            raise ValueError("La soustraction nécessite au moins deux arguments")
+        result = args[0]
+        for num in args[1:]:
+            result -= num
+        return result
 
     @staticmethod
     def multiplication(*args):
@@ -27,31 +31,49 @@ class Calculatrice:
         if not all(isinstance(arg, Number) for arg in args):
             raise TypeError("Tous les arguments doivent être des nombres")
 
-        if op == '+':
-            return self.addition(*args)
-        elif op == '-':
-            if len(args) != 2:
-                raise ValueError("La soustraction nécessite exactement deux arguments")
-            return self.soustraction(*args)
-        elif op == '*':
-            return self.multiplication(*args)
-        elif op == '/':
-            if len(args) != 2:
-                raise ValueError("La division nécessite exactement deux arguments")
-            return self.division(*args)
-        else:
+        operations = {
+            '+': (self.addition, 0),
+            '-': (self.soustraction, 2),
+            '*': (self.multiplication, 0),
+            '/': (self.division, 2)
+        }
+
+        if op not in operations:
             raise ValueError("Opération non reconnue")
 
+        func, min_args = operations[op]
+        if len(args) < min_args:
+            raise ValueError(f"L'opération {op} nécessite au moins {min_args} arguments")
+
+        return func(*args)
+
+def get_numbers(min_count):
+    numbers = []
+    i = 1
+    while True:
+        try:
+            num = input(f"Entrez le nombre {i} (ou appuyez sur Entrée pour terminer): ")
+            if num == "" and len(numbers) >= min_count:
+                break
+            numbers.append(float(num))
+            i += 1
+        except ValueError:
+            print("Veuillez entrer un nombre valide.")
+    return numbers
 
 def main():
     calc = Calculatrice()
+    operations = {
+        '1': ('+', "Addition", 0),
+        '2': ('-', "Soustraction", 2),
+        '3': ('*', "Multiplication", 0),
+        '4': ('/', "Division", 2)
+    }
 
     while True:
         print("\nChoisissez une opération:")
-        print("1. Addition")
-        print("2. Soustraction")
-        print("3. Multiplication")
-        print("4. Division")
+        for key, (_, name, _) in operations.items():
+            print(f"{key}. {name}")
         print("5. Quitter")
 
         choix = input("Entrez votre choix (1-5): ")
@@ -60,35 +82,19 @@ def main():
             print("Au revoir!")
             break
 
-        if choix not in ['1', '2', '3', '4']:
+        if choix not in operations:
             print("Choix invalide. Veuillez réessayer.")
             continue
 
+        op, name, min_args = operations[choix]
+        print(f"Entrez au moins {min_args} nombres pour {name.lower()} (appuyez sur Entrée sans rien écrire pour terminer):")
+
         try:
-            if choix in ['1', '3']:  # Addition et multiplication peuvent avoir plusieurs arguments
-                nombres = input("Entrez les nombres séparés par des espaces: ").split()
-                nombres = [float(n) for n in nombres]
-            else:  # Soustraction et division n'ont que deux arguments
-                a = float(input("Entrez le premier nombre: "))
-                b = float(input("Entrez le deuxième nombre: "))
-                nombres = [a, b]
-
-            if choix == '1':
-                resultat = calc.operation('+', *nombres)
-            elif choix == '2':
-                resultat = calc.operation('-', *nombres)
-            elif choix == '3':
-                resultat = calc.operation('*', *nombres)
-            elif choix == '4':
-                resultat = calc.operation('/', *nombres)
-
+            nombres = get_numbers(min_args)
+            resultat = calc.operation(op, *nombres)
             print(f"Résultat: {resultat}")
-
-        except ValueError as e:
+        except (ValueError, TypeError) as e:
             print(f"Erreur: {e}")
-        except TypeError as e:
-            print(f"Erreur: {e}")
-
 
 if __name__ == "__main__":
     main()

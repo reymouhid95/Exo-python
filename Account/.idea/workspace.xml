@@ -5,16 +5,19 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="be40e9e4-c38c-4704-81d9-f03533b54154" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/Account.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/dbnavigator.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/git_toolbox_blame.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/profiles_settings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/material_theme_project_new.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Calculatrice_surchargée/.idea/material_theme_project_new.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Calculatrice_surchargée/.idea/material_theme_project_new.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Calculatrice_surchargée/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Calculatrice_surchargée/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Calculatrice_surchargée/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Calculatrice_surchargée/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Calculatrice_surchargée/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/../Calculatrice_surchargée/main.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Recursivité/.idea/dbnavigator.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Recursivité/.idea/dbnavigator.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Recursivité/.idea/material_theme_project_new.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Recursivité/.idea/material_theme_project_new.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Recursivité/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Recursivité/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Recursivité/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Recursivité/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Recursivité/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Recursivité/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Stock/.idea/material_theme_project_new.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Stock/.idea/material_theme_project_new.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Stock/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Stock/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Stock/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Stock/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Stock/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/../Stock/main.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -29,11 +32,17 @@
     </option>
   </component>
   <component name="Git.Settings">
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "associatedIndex": 2
-}]]></component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/main.py" root0="SKIP_INSPECTION" />
+  </component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="CurrentFile" />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 2
+}</component>
   <component name="ProjectId" id="2jOjFM15pkmFXtqaBJ17dYeFZxB" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <ConfirmationsSetting value="2" id="Add" />
@@ -42,14 +51,14 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Python.main.executor": "Run",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "master",
-    "ignore_missing_gitignore": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Python.main.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;ignore_missing_gitignore&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
