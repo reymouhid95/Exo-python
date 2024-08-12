@@ -1,5 +1,6 @@
 import re
-from typing import Optional, Tuple, List
+from typing import Optional, Tuple, List, Dict
+
 
 class Transaction:
     def __init__(self, type: str, montant: float, details: str):
@@ -8,7 +9,8 @@ class Transaction:
         self.details = details
 
     def __str__(self):
-        return f"{self.type} : {self.montant} FCFA - {self.details}"
+        return f"{self.type} : {self.montant:.2f} FCFA - {self.details}"
+
 
 class OrangeMoney:
     TRANSFERT_MIN = 100
@@ -34,24 +36,35 @@ class OrangeMoney:
             print(f"{i}. {item}")
 
     def solde_compte(self) -> str:
-        return f"Votre solde est de {self.solde} FCFA"
+        return f"Votre solde est de {self.solde:.2f} FCFA"
 
     def effectuer_transaction(self, type: str, montant: float, details: str) -> str:
         if self.solde >= montant:
             self.solde -= montant
             self.transactions.append(Transaction(type, montant, details))
-            return f"{type} de {montant} FCFA {details}. Nouveau solde : {self.solde} FCFA"
+            return f"{type} de {montant:.2f} FCFA {details}. Nouveau solde : {self.solde:.2f} FCFA"
         return "Erreur : Solde insuffisant."
 
     def verifier_montant(self, montant: float, min_: float, max_: float) -> Optional[str]:
         if min_ <= montant <= max_:
             return None
-        return f"Erreur : Le montant doit être entre {min_} et {max_} FCFA."
+        return f"Erreur : Le montant doit être entre {min_:.2f} et {max_:.2f} FCFA."
+
+    def verifier_numero(self, numero: str) -> Tuple[bool, str]:
+        pattern = r'^(77|78|76|70|75)\d{7}$'
+        if re.match(pattern, numero):
+            return True, ""
+        return False, "Numéro de téléphone invalide. Il doit commencer par 77, 78, 76, 70 ou 75 et avoir 9 chiffres."
 
     def transfert_argent(self, montant: float, beneficiaire: str) -> str:
         erreur = self.verifier_montant(montant, self.TRANSFERT_MIN, self.TRANSFERT_MAX)
         if erreur:
             return erreur
+
+        valide, message = self.verifier_numero(beneficiaire)
+        if not valide:
+            return message
+
         return self.effectuer_transaction("Transfert", montant, f"effectué à {beneficiaire}")
 
     def paiement_facture(self, montant: float, methode: str, details: str) -> str:
@@ -63,6 +76,11 @@ class OrangeMoney:
         erreur = self.verifier_montant(montant, self.CREDIT_MIN, self.CREDIT_MAX)
         if erreur:
             return erreur
+
+        valide, message = self.verifier_numero(numero)
+        if not valide:
+            return message
+
         return self.effectuer_transaction("Achat crédit", montant, f"pour le numéro {numero}")
 
     def consulter_transactions(self) -> str:
@@ -134,34 +152,48 @@ class OrangeMoney:
     def action_transfert(self):
         montant = obtenir_montant("le transfert")
         if montant:
-            beneficiaire = input("Entrez le numéro du bénéficiaire : ")
-            print(self.transfert_argent(montant, beneficiaire))
+            while True:
+                beneficiaire = input("Entrez le numéro du bénéficiaire : ")
+                valide, message = self.verifier_numero(beneficiaire)
+                if valide:
+                    print(self.transfert_argent(montant, beneficiaire))
+                    break
+                print(message)
 
     def action_paiement_facture(self):
-        methode = input("Méthode de paiement (Liquide/Chèque) : ")
-        montant_str = input("Entrez le montant (en chiffres ou en lettres) : ")
-        montant = self.convertir_montant(montant_str)
+        while True:
+            methode = input("Méthode de paiement (Liquide/Chèque) : ").capitalize()
+            if methode in ["Liquide", "Chèque"]:
+                break
+            print("Erreur : Méthode de paiement non reconnue. Veuillez choisir Liquide ou Chèque.")
+
+        montant = obtenir_montant("le paiement de la facture")
         if montant:
             details = input("Détails de la facture : ")
             print(self.paiement_facture(montant, methode, details))
-        else:
-            print("Erreur : Montant invalide.")
 
     def action_achat_credit(self):
         montant = obtenir_montant("l'achat de crédit")
         if montant:
-            numero = input("Entrez le numéro de téléphone : ")
-            print(self.achat_credit(montant, numero))
+            while True:
+                numero = input("Entrez le numéro de téléphone : ")
+                valide, message = self.verifier_numero(numero)
+                if valide:
+                    print(self.achat_credit(montant, numero))
+                    break
+                print(message)
+
 
 def obtenir_montant(operation: str) -> Optional[float]:
     while True:
-        montant = input(f"Entrez le montant pour {operation} (ou 'q' pour annuler) : ")
-        if montant.lower() == 'q':
+        montant_str = input(f"Entrez le montant pour {operation} (ou 'q' pour annuler) : ")
+        if montant_str.lower() == 'q':
             return None
-        try:
-            return float(montant)
-        except ValueError:
-            print("Veuillez entrer un nombre valide.")
+        montant = OrangeMoney.convertir_montant(montant_str)
+        if montant is not None:
+            return montant
+        print("Veuillez entrer un montant valide (en chiffres ou en lettres).")
+
 
 if __name__ == "__main__":
     orange_money = OrangeMoney()
